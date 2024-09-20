@@ -54,6 +54,15 @@
 ![image](https://github.com/user-attachments/assets/e7ff0c5d-00d0-4ac0-b997-eaffe9ee5e9a)
 ---
 
+#### 12. 퍼블릭 IP 서버 연결 : 리소스 연결 선택
+![image](https://github.com/user-attachments/assets/c311e2e6-5f04-4fba-9e77-1264609833a6)
+---
+
+#### 13. 리소스 선택 : 앞에서 생성한 서버 선택 후 "저장" 버튼 클릭
+![image](https://github.com/user-attachments/assets/5190b2ef-68d5-4af7-9c81-f169e5f44e9b)
+---
+
+<br>
 
 # GATK 연구환경 설정
 
@@ -109,45 +118,53 @@ sudo dnf -y update
 ```
 
 ## 2. System Extension Install
-패키지 업그레이드를 강제로 실행하면서 기존 의존성 문제를 무시하고 최신 버전으로 업데이트하는 옵션입니다.
-
-
-## Documentation for individual modules
-
-Services | Documentation | Install Command
------------- | ------------- | -------------
-*Server* | [**Server**](https://github.com/NaverCloudPlatform/ncloud-sdk-python/blob/master/lib/services/server/README.md) | pip install ncloud-server
-*Loadbalancer* | [**Loadbalancer**](https://github.com/NaverCloudPlatform/ncloud-sdk-python/blob/master/lib/services/loadbalancer/README.md) | pip install ncloud-loadbalancer
-*Autoscaling* | [**Autoscaling**](https://github.com/NaverCloudPlatform/ncloud-sdk-python/blob/master/lib/services/autoscaling/README.md) | pip install ncloud-autoscaling
-*CDN* | [**CDN**](https://github.com/NaverCloudPlatform/ncloud-sdk-python/blob/master/lib/services/cdn/README.md) | pip install ncloud-cdn
-*CloudDB* | [**CloudDB**](https://github.com/NaverCloudPlatform/ncloud-sdk-python/blob/master/lib/services/clouddb/README.md) | pip install ncloud-clouddb
-*Server(VPC)* | [**Server(VPC)**](https://github.com/NaverCloudPlatform/ncloud-sdk-python/blob/master/lib/services/vserver/README.md) | pip install ncloud-vserver
-*VPC* | [**VPC**](https://github.com/NaverCloudPlatform/ncloud-sdk-python/blob/master/lib/services/vpc/README.md) | pip install ncloud-vpc
-*Nas(VPC)* | [**Nas(VPC)**](https://github.com/NaverCloudPlatform/ncloud-sdk-python/blob/master/lib/services/vnas/README.md) | pip install ncloud-vnas
-*Autoscaling(VPC)* | [**Autoscaling(VPC)**](https://github.com/NaverCloudPlatform/ncloud-sdk-python/blob/master/lib/services/vautoscaling/README.md) | pip install ncloud-vautoscaling
-*Loadbalancer(VPC)* | [**Loadbalancer(VPC)**](https://github.com/NaverCloudPlatform/ncloud-sdk-python/blob/master/lib/services/vloadbalancer/README.md) | pip install ncloud-vloadbalancer
-
-
-### License
-
+wget, git-lfs 설치
 ```
-Copyright (c) 2021 NAVER Cloud Corp.
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in
-all copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.  IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-THE SOFTWARE.
+sudo dnf -y install wget git-lfs
 ```
+<br>
+
+Development Tools 설치 -- 필요시 소스코드등을 컴파일 할때 필요..
+```
+sudo dnf -y groupinstall 'Development Tools'
+```
+위 명령어는 "개발 도구" 그룹에 속하는 모든 패키지를 자동으로 설치합니다.
+설치 후에는 해당 패키지들을 사용하여 다양한 프로그래밍 작업을 수행할 수 있습니다. 예를 들어, Python, Java, C/C++, Go 등의 언어를 사용하여 프로그램을 개발할 수 있습니다. 또한, 디버깅 도구, 테스트 도구, 라이브러리 등도 함께 설치되므로 개발 작업을 더욱 효율적으로 수행할 수 있습니다. 그룹 패키지를 설치하면 여러 개의 개별 패키지를 일일이 설치하는 것보다 빠르고 간편합니다.
+
+## 3. Environment-modules 설치
+```
+sudo yum -y install environment-modules
+```
+
+## 4. java 설치
+```
+sudo dnf -y install java-11-openjdk-devel java-17-openjdk-devel
+```
+
+## 5. miniconda 설치
+```
+sudo mkdir -p /opt/miniconda3
+```
+```
+sudo chown -R 1000:1000 /opt/miniconda3
+```
+```
+sudo chown -R rocky:rocky /opt/miniconda3
+```
+```
+sudo wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh -O /opt/miniconda3/miniconda.sh
+```
+```
+sudo bash /opt/miniconda3/miniconda.sh -b -u -p /opt/miniconda3
+```
+```
+sudo rm -rf /opt/miniconda3/miniconda.sh
+```
+```
+/opt/miniconda3/bin/conda init bash
+```
+쉘을 빠져나왔다가 다시 들어가면 설치된 콘다 (base)환경으로 접속됩니다.
+
+
+
+
