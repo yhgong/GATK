@@ -6,8 +6,53 @@
 ![image](https://github.com/user-attachments/assets/5623ee90-d57c-4e40-ba9a-4c9cfdac8b2a)
 
 ## 3. 인스턴스 생성
-1. 인스턴스 생성 버튼 클릭
+#### 1. 인스턴스 생성 버튼 클릭
+![image](https://github.com/user-attachments/assets/ee570e6b-9045-4844-b6ef-cd53e0ca5587)
+--
+#### 2. 서버명 입력 : lab-svr
+![image](https://github.com/user-attachments/assets/2c4f6e72-b282-4686-b5f1-4eb32f39add0)
+---
+#### 3. 이미지 선택 : Rocky_linux 9.4
+![image](https://github.com/user-attachments/assets/deb41818-e72e-460a-82d0-5f8fc5cf7806)
+---
+#### 4. 인스턴스 유형 : 컴퓨팅 최적화 , c2a.xlarge
+![image](https://github.com/user-attachments/assets/fcfbf0e7-cbce-4748-a8c4-6dfeebd49693)
+---
+#### 5. 루트 볼륨 : 100GB
 
+![image](https://github.com/user-attachments/assets/8a707b8d-6a65-47b5-870f-7433f396c03c)
+---
+#### 6. 키페어 : 앞 시간에 생성한 키페어 선택
+![image](https://github.com/user-attachments/assets/3a7aeaf6-0d93-45a4-8dfc-34b11df5b2d3)
+---
+#### 7. 네트워크
+
+![image](https://github.com/user-attachments/assets/abeb2c6a-0197-49b1-80e4-35bfbe47f8e2)
+
+- VPC : 앞전 실습에서 생성한 VPC 선택
+- 서브넷 : main 서브넷 선택
+- 보안그룹 : 아래와 같이 포트 오픈
+  - 출발지 : www.naver.com 에서 "내 아이피 주소 확인" 으로 확인
+  ![image](https://github.com/user-attachments/assets/9850df61-c501-4cc6-95ea-f9df88af79da)
+
+
+![image](https://github.com/user-attachments/assets/d340f3d1-9c52-42ac-9c93-4ad8d4042742)
+![image](https://github.com/user-attachments/assets/aeccbbe0-bd7b-4de2-bb2b-eb7f259750a1)
+---
+#### 8. 생성 버튼 클릭
+
+![image](https://github.com/user-attachments/assets/fd9d16e7-7480-4992-99b3-24fa6880c41e)
+---
+#### 9. 공인 IP 생성 : VPC -> 퍼블릭 IP 선택
+![image](https://github.com/user-attachments/assets/34b712ca-bd77-4434-8bd8-76781d1f1bf9)
+---
+#### 10. "+ 퍼블릭 IP 생성" 클릭
+
+![image](https://github.com/user-attachments/assets/9686dcec-ac50-499c-a9a3-311bc2772181)
+---
+#### 11. 퍼블릭 IP 설명에 내용 입력(옵션)후  "생성" 버튼 클릭
+![image](https://github.com/user-attachments/assets/e7ff0c5d-00d0-4ac0-b997-eaffe9ee5e9a)
+---
 
 
 # GATK 연구환경 설정
