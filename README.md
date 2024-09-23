@@ -261,7 +261,7 @@ conda install -y ipykernel
 ![image](https://github.com/user-attachments/assets/bd1e779c-fb6e-4703-81dd-46dcae34711b)
 
 # Gakaxt 설치
-##1. SSH 서버 접속
+##1. SSH 서버 접속 및 위치 확인
 
 ![image](https://github.com/user-attachments/assets/18b2480a-b6b6-4818-8716-4ec4260f6cea)
 
@@ -274,6 +274,25 @@ conda install -y ipykernel
 pwd
 ```
 ![image](https://github.com/user-attachments/assets/d9c9a7a9-fcf1-4083-be9c-a52cf463072d)
+
+##2. 소스 다운로드
+```
+git clone https://github.com/galaxyproject/galaxy.git
+```
+##3. 다운받은 디렉토리로 이동
+```
+cd ./galaxy
+```
+
+##4. 소스 Update
+```
+git fetch origin && git checkout release_24.1 && git pull --ff-only origin release_24.1
+```
+
+##5. 설치
+```
+sh run.sh
+```
 
 
 
