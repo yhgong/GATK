@@ -64,7 +64,7 @@
 
 <br>
 
-# GATK 연구환경 설정
+# 주피터랩 설치 및 conda GATK3 연동
 
 ## 1. System Update
 패키지 업그레이드를 강제로 실행하면서 기존 의존성 문제를 무시하고 최신 버전으로 업데이트하는 옵션입니다.
@@ -118,9 +118,9 @@ sudo dnf -y update
 ```
 
 ## 2. System Extension Install
-wget, git-lfs 설치
+wget, git-lfs net-tools 설치
 ```
-sudo dnf -y install wget git-lfs
+sudo dnf -y install wget git-lfs net-tools
 ```
 <br>
 
@@ -164,6 +164,119 @@ sudo rm -rf /opt/miniconda3/miniconda.sh
 /opt/miniconda3/bin/conda init bash
 ```
 쉘을 빠져나왔다가 다시 들어가면 설치된 콘다 (base)환경으로 접속됩니다.
+
+
+## 6. micromamba 설치
+```
+"${SHELL}" <(curl -L micro.mamba.pm/install.sh)
+```
+![image](https://github.com/user-attachments/assets/6d0c1b46-d96f-4ef8-bfb0-102462fe52f9)
+
+base 콘다 환경에 micromamba 환경을 설치 합니다.
+
+## 7. jupyterlab 설치
+```
+conda install -y jupyterlab
+```
+설치 명령 이후 아래와 같이 쓰기 권한이 없다는 메시지가 나오면
+![image](https://github.com/user-attachments/assets/ceae5328-9c79-47a5-affe-aac14a3a110b)
+
+아래 명령을 다시 한번 수행 후,
+```
+sudo chown -R rocky:rocky /opt/miniconda3
+```
+주피터랩 설치 명령을 한번 더 수행
+```
+conda install -y jupyterlab
+```
+아래와 같이 모든 과정이 "done"으로 표기 되면 설치 완료!!!
+![image](https://github.com/user-attachments/assets/3adb1315-15bc-400e-945f-a2d317755077)
+
+## 8. 데이터시각화 라이브러리 bokeh extension 설치
+```
+conda install -y jupyter_bokeh
+```
+아래와 같이 모든 과정이 "done"으로 표기 되면 설치 완료!!!
+![image](https://github.com/user-attachments/assets/b19891ef-6e90-4015-a578-a8eb6b796c08)
+
+## 9. 아나콘다와 주피터랩의 가상환경을 연결해 주는 nb_conda_kernel 설치
+```
+conda install nb_conda_kernels
+```
+아래처럼 나오면 정상 설치!!!
+![image](https://github.com/user-attachments/assets/1d479fad-257b-480e-a039-b09d0ce347bb)
+
+## 10. 주피터랩 실행 확인
+```
+jupyter lab --ip=0.0.0.0 --port=8888 --allow-root --no-browser
+```
+- 옵션설명
+  1. --ip=0.0.0.0 : 접근하는 모든 IP에 대해서 접속을 허용. 
+  2. --port=8888 : 8888번 포트로 들어 오는 서비스만 허용
+  3. --allow-root : root 권한을 가지고 실행 (윈도우에 관리자 권한으로 실행과 유사)
+  4. --no--browser : 브라우저를 띄우지 마라
+     
+![image](https://github.com/user-attachments/assets/f4ae0f8b-155a-40b7-bef4-58b9e19a5835)
+
+## 11.포트에 대한 개념과 방화벽에 대하 개념 설명 PPT로 설명
+
+![image](https://github.com/user-attachments/assets/ece4e3f6-e754-4edb-bc19-712c788a883e)
+
+## 12. GATK conda 설치
+(base) 환경에서 설치 <br>
+![image](https://github.com/user-attachments/assets/9727ac36-30a6-46a9-b0e1-4c101aa28775)
+```
+conda create -y -n gatk python=2.7
+```
+![image](https://github.com/user-attachments/assets/aa3d417c-ed92-44cc-b28b-8c22791b7592)
+
+gatk 가상환경으로 진입
+```
+conda activate gatk
+```
+![image](https://github.com/user-attachments/assets/9eeb679b-6b13-4de0-8082-d79e838309cb)
+
+gatk 모듈 설치
+```
+conda install -y bioconda::gatk
+```
+정상 설치 확인!!!
+```
+gatk3
+```
+![image](https://github.com/user-attachments/assets/3668a0d8-1fc8-4049-ba11-3d983aa70121)
+
+주피터랩과 gatk 환경 연동
+```
+conda install -y ipykernel
+```
+주피터랩 연동 확인
+1. (base) 환경에서 주피터랩 실행   
+2. gatk 가상환경 아이콘 확인 <br>
+![image](https://github.com/user-attachments/assets/5a6735dc-59d0-479a-85f7-94e3243c7fa3)
+3. gatk3 명령어 실행 확인 주피터랩에서 외부명령 실행시 명령어 앞에 "느낌표" + 실행하고자하는 명령어 ! <br>
+```
+!gatk3
+```
+![image](https://github.com/user-attachments/assets/bd1e779c-fb6e-4703-81dd-46dcae34711b)
+
+# Gakaxt 설치
+##1. SSH 서버 접속
+
+![image](https://github.com/user-attachments/assets/18b2480a-b6b6-4818-8716-4ec4260f6cea)
+
+(base) 가상환경 확인
+
+![image](https://github.com/user-attachments/assets/05f59f13-1eff-441a-94d8-b48c9c95b789)
+
+(base) 디렉토리 위치 확인 <br>
+```
+pwd
+```
+![image](https://github.com/user-attachments/assets/d9c9a7a9-fcf1-4083-be9c-a52cf463072d)
+
+
+
 
 
 
