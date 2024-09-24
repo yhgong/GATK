@@ -348,7 +348,52 @@ sh run.sh
 
 # Triodenovo 설치
 
-## 1.파일 다운로드
+## 1. 설치 위치
+```
+pwd
+```
+![image](https://github.com/user-attachments/assets/9a4022d5-5c2e-4867-933b-3f36b221bf05)
+
+## 2.파일 다운로드
+```
+wget --no-check-certificate https://genome.sph.umich.edu/w/images/f/f4/Triodenovo.0.06.tar.gz
+```
+
+## 3.파일 압축해제
+```
+tar -xzvf Triodenovo.0.06.tar.gz
+```
+
+## 4.다운로드 한 압축파일 삭제
+```
+rm -f Triodenovo.0.06.tar.gz
+```
+
+## 5.디렉토리 이동
+```
+cd ./triodenovo.0.06/base
+```
+
+## 6.Argument.h 파일 수정
+- 변경 전
+![image](https://github.com/user-attachments/assets/a1865a6c-4a33-467a-9195-037278aa351f)
+
+```
+sed -i "366 c\                 if (strcmp(argv[i+1], "") == 0) {" Argument.h
+```
+- 변경 후
+![image](https://github.com/user-attachments/assets/9cd0be1d-98a0-4277-a7c7-05173f6fa3d3)
+
+
+
+
+
+
+
+
+
+
+
 
 
 
