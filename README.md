@@ -1,4 +1,5 @@
 # 카카오클라우드 VM 생성
+
 ## 1. kakaocloud 콘솔 로그인
 ![image](https://github.com/user-attachments/assets/58d15e7c-d0eb-4b02-b4c3-547ab0cd70a3)
 
@@ -338,9 +339,13 @@ sh run.sh
 
 
 ## 9.브라우저 접속 URL에 자신의 서버공인 IP를 입력 후 8080포트로 접속 확인
-클롬등의 브라우저 창을 열고 주소란에 입력 http://210.109.54.95:8080
+크롬등의 브라우저 창을 열고 주소란에 입력 http://210.109.54.95:8080
 
 ![image](https://github.com/user-attachments/assets/0e6c827a-337d-4432-bdc4-b01ea62e8490)
+
+# Triodenovo 설치
+
+## 1.파일 다운로드
 
 
 
