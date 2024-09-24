@@ -322,6 +322,9 @@ vi galaxy.yml
 ![image](https://github.com/user-attachments/assets/33ce4ab8-1997-42c7-88be-15f4481888e6)
 
 ## 5.galaxy.yml 파일 저장
+gunicorn : 웹 서버로 부터 받은 요청을 웹 어플리케이션에 전달해 주는 역할을 함.
+
+웹서버의 설정을 나자신에서 모든 서버의 요청을 받을 수 있도록 변경하는 작업임.
 
 ## 6.실행 디렉토리로 이동
 ```
