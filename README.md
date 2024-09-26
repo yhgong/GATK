@@ -1,4 +1,4 @@
-# 카카오클라우드 VM 생성
+![image](https://github.com/user-attachments/assets/47b4f470-5131-4ed5-8cd2-dd9174658443)# 카카오클라우드 VM 생성
 
 ## 1. kakaocloud 콘솔 로그인
 ![image](https://github.com/user-attachments/assets/58d15e7c-d0eb-4b02-b4c3-547ab0cd70a3)
@@ -346,7 +346,7 @@ sh run.sh
 
 ![image](https://github.com/user-attachments/assets/0e6c827a-337d-4432-bdc4-b01ea62e8490)
 
-# Triodenovo 설치
+# Triodenovo 설치
 
 ## 1. 설치 위치
 ```
@@ -414,6 +414,74 @@ make
 ## 11.결과 메시지 확인
 
 ![image](https://github.com/user-attachments/assets/34fdb5ef-b330-4d52-88cc-ff91d6ff2f26)
+
+## 12.실행파일 확인
+
+![image](https://github.com/user-attachments/assets/9c0b3312-ac2a-4341-8da5-78a0805c2a3c)
+
+
+# AdmixTools 설치
+
+## 1.설치 위치
+```
+pwd
+```
+
+![image](https://github.com/user-attachments/assets/50c776f5-de4c-40f4-9506-0f90ab888c33)
+
+
+## 2.소스 다운로드
+```
+wget https://github.com/DReichLab/AdmixTools/archive/refs/tags/v7.0.2.zip
+```
+
+## 3.컴파일에 필요한 툴 설치
+```
+sudo dnf install -y gsl-devel openblas-devel
+```
+
+## 4.파일 압축 해제
+```
+unzip v7.0.2.zip
+```
+
+## 5. 디렉토리 이동
+```
+cd ./AdmixTools-7.0.2/src
+```
+
+## 6.make
+```
+make clobber
+```
+```
+make all
+```
+```
+make install
+```
+
+## 7.압축파일 삭제
+```
+cd
+```
+```
+rm -f v7.0.2.zip
+```
+
+## 8.프로그램 확인
+```
+cd AdmixTools-7.0.2/bin
+```
+```
+ls -lrt
+```
+![image](https://github.com/user-attachments/assets/240bd318-7e73-410e-be8f-21d3a14cfdaa)
+
+
+
+
+
 
 
 
