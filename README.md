@@ -379,10 +379,41 @@ cd ./triodenovo.0.06/base
 ![image](https://github.com/user-attachments/assets/a1865a6c-4a33-467a-9195-037278aa351f)
 
 ```
-sed -i "366 c\                 if (strcmp(argv[i+1], "") == 0) {" Argument.h
+sed -i '366 c\                 if (strcmp(argv[i+1], "") == 0) {' Argument.h
 ```
 - 변경 후
 ![image](https://github.com/user-attachments/assets/9cd0be1d-98a0-4277-a7c7-05173f6fa3d3)
+
+## 7.디렉토리 이동
+```
+cd ../core
+```
+
+## 8.Parameters.cpp 파일 수정
+- 변경 전
+  
+![image](https://github.com/user-attachments/assets/1176a7a9-fb1f-49fd-aab8-f3122c9b344e)
+
+```
+sed -i '501s/bool/int/g' Parameters.cpp
+```
+- 변경 후
+  
+![image](https://github.com/user-attachments/assets/f9c3c9a3-e832-4831-8bc1-881a3e88e387)
+
+## 9.디렉토리 이동
+```
+cd ..
+```
+
+## 10.make
+```
+make
+```
+
+## 11.결과 메시지 확인
+
+![image](https://github.com/user-attachments/assets/34fdb5ef-b330-4d52-88cc-ff91d6ff2f26)
 
 
 
