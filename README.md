@@ -381,7 +381,7 @@ cd ./triodenovo.0.06/base
 ```
 sed -i "366 c\                 if (strcmp(argv[i+1], "") == 0) {" Argument.h
 ```
-- 변경 후
+- 변경 후
 ![image](https://github.com/user-attachments/assets/9cd0be1d-98a0-4277-a7c7-05173f6fa3d3)
 
 
