@@ -424,6 +424,9 @@ make
 
 ## 1.설치 위치
 ```
+cd
+```
+```
 pwd
 ```
 
@@ -478,8 +481,17 @@ ls -lrt
 ```
 ![image](https://github.com/user-attachments/assets/240bd318-7e73-410e-be8f-21d3a14cfdaa)
 
+# R 설치
 
+## 1.가상환경 생성
+```
+conda create -y -n r_env python=3.10
+```
 
+## 2.가상환경 진입
+```
+conda activate r_env
+```
 
 
 
