@@ -350,6 +350,9 @@ sh run.sh
 
 ## 1. 설치 위치
 ```
+cd
+```
+```
 pwd
 ```
 ![image](https://github.com/user-attachments/assets/9a4022d5-5c2e-4867-933b-3f36b221bf05)
@@ -407,6 +410,10 @@ cd ..
 ```
 
 ## 10.make
+make에 필요한 툴 설치
+```
+sudo dnf install bzip2-devel
+```
 ```
 make
 ```
@@ -417,7 +424,28 @@ make
 
 ## 12.실행파일 확인
 
+```
+cd bin
+```
+```
+triodenovo
+```
+
 ![image](https://github.com/user-attachments/assets/9c0b3312-ac2a-4341-8da5-78a0805c2a3c)
+
+## 13.디렉토리 등록
+```
+echo 'export PATH=$PATH:/home/rocky/triodenovo.0.06/bin' >> ~/.bashrc
+```
+## 14.디렉토리 등록
+```
+echo 'export PATH=$PATH:/home/rocky/triodenovo.0.06/bin' >> ~/.bashrc
+```
+쉘 재기동
+```
+source ~/.bachrc
+```
+
 
 
 # AdmixTools 설치
