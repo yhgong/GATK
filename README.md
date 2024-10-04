@@ -437,11 +437,7 @@ triodenovo
 ```
 echo 'export PATH=$PATH:/home/rocky/triodenovo.0.06/bin' >> ~/.bashrc
 ```
-## 14.디렉토리 등록
-```
-echo 'export PATH=$PATH:/home/rocky/triodenovo.0.06/bin' >> ~/.bashrc
-```
-쉘 재기동
+## 14.쉘 재기동
 ```
 source ~/.bachrc
 ```
@@ -509,6 +505,14 @@ ls -lrt
 ```
 ![image](https://github.com/user-attachments/assets/240bd318-7e73-410e-be8f-21d3a14cfdaa)
 
+## 9.실행 디렉토리 등록
+```
+cd
+```
+```
+echo 'export PATH=$PATH:/home/rocky/AdmixTools-7.0.2/bin' >> ~/.bashrc
+```
+
 # R 설치
 
 ## 1.가상환경 생성
@@ -520,6 +524,25 @@ conda create -y -n r_env python=3.10
 ```
 conda activate r_env
 ```
+
+## 3. R 설치
+```
+sudo dnf install -y R
+```
+
+## 4. RServer 설치
+설치 파일 다운로드
+```
+wget https://download2.rstudio.org/server/rhel9/x86_64/rstudio-server-rhel-2024.09.0-375-x86_64.rpm
+```
+```
+sudo yum install rstudio-server-rhel-2024.09.0-375-x86_64.rpm
+```
+
+
+
+
+
 
 
 
