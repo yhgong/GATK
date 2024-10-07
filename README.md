@@ -498,8 +498,10 @@ cd /etc/selinux
 
 config 파일 수정
 ```
-sudo sed -i '22s/SELINUX=permissive/SELINUX=disabled/g' config
+sudo sed -i '22s/SELINUX=enforcing/SELINUX=disabled/g' config
 ```
+SELinux 를 해제후 다시 켤 경우 relabel이 필요하며 이때 잘못된 설정이 있을 경우 부팅이 안 되거나 ssh 로 원격 접속이 불가능할 수 있으므로 **enforcing** 모드가 아닌 **permissive** 모드로 설정 후 재부팅하는 것을 권장
+
 
 파일 수정 확인
 ```
@@ -534,6 +536,58 @@ ID  : rocky
 PWD : 위에서 지정한 비밀번호
 
 ![image](https://github.com/user-attachments/assets/99d90262-5b90-4a73-802e-38c3ba35fa93)
+
+<br>
+<br>
+<br>
+<br>
+
+# ◼︎ DeNovoCNN 설치
+## 1.디렉토리 홈으로 이동
+```
+cd
+```
+## 2.git에서 소스 가져오기
+```
+git clone https://github.com/Genome-Bioinformatics-RadboudUMC/DeNovoCNN.git
+```
+## 3.디렉토리 이동
+```
+cd ./DeNovoCNN
+```
+## 4.채널 우선순위 변경
+```
+conda config --set channel_priority flexible
+```
+flexible 모드에서는 각 채널의 최신 버전 패키지가 자동으로 선택됩니다. 
+
+이 모드는 안정적인 패키지보다는 최신 버전의 패키지를 선호하는 경우에 유용합니다.
+
+•	strict: 공식 채널의 패키지를 우선적으로 선택합니다.
+•	relaxed: 공식 채널과 비공채널의 패키지를 동등하게 고려합니다.
+•	flexible: 각 채널의 최신 버전 패키지를 자동으로 선택합니다.
+
+## 5.yml파일을 이용한 콘다 가상환경 생성 및 패키지 설치
+```
+conda env create -f environment.yml
+```
+
+![image](https://github.com/user-attachments/assets/9d4ad80c-d1a9-4d35-be09-89a46a095e17)
+
+## 6.가상환경으로 진입
+```
+conda activate tensorflow_env
+```
+
+## 7.ipykernel 설치
+```
+conda install -y ipykernel
+```
+
+## 8.주피터랩 확인
+
+![image](https://github.com/user-attachments/assets/5f3f14e2-60ce-46e0-b1e0-50f0a2071dc2)
+
 
 <br>
 <br>
