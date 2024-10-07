@@ -455,7 +455,7 @@ make
 cd bin
 ```
 ```
-triodenovo
+./triodenovo
 ```
 
 ![image](https://github.com/user-attachments/assets/9c0b3312-ac2a-4341-8da5-78a0805c2a3c)
@@ -565,6 +565,59 @@ wget https://download2.rstudio.org/server/rhel9/x86_64/rstudio-server-rhel-2024.
 ```
 sudo yum install rstudio-server-rhel-2024.09.0-375-x86_64.rpm
 ```
+
+## 5. SELinux 설정 및 rocky 비밀번호 생성
+
+디렉토리 이동
+```
+cd /etc/selinux
+```
+
+config 파일 수정
+```
+sudo sed -i '22s/SELINUX=permissive/SELINUX=disabled/g' config
+```
+
+파일 수정 확인
+```
+cat config
+```
+![image](https://github.com/user-attachments/assets/673ecf76-eace-4186-9e5d-7d23c68c4c4a)
+
+
+rocky 계정 비밀 번호 생성
+```
+sudo passwd rocky
+```
+원하는 비밀번호 입력 후 비밀번호 확인하여 등록
+
+![image](https://github.com/user-attachments/assets/d133a5a7-8c0c-4107-aedf-fc93a5fc4d4b)
+
+
+## 6. 서비스 포트 확인
+```
+sudo netstat -nltp
+```
+
+## 7. 서비스 접속
+
+서버공인IP:8787
+http://210.109.54.95:8787
+
+![image](https://github.com/user-attachments/assets/d4f3536b-73c5-4163-a540-13678f2f3a97)
+
+ID  : rocky
+
+PWD : 위에서 지정한 비밀번호
+
+![image](https://github.com/user-attachments/assets/99d90262-5b90-4a73-802e-38c3ba35fa93)
+
+
+
+
+
+
+
 
 
 
