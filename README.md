@@ -84,7 +84,27 @@ sudo timedatectl set-timezone Asia/Seoul
 ```
 ![image](https://github.com/user-attachments/assets/ca40206a-2226-42c0-8518-724267d2700f)
 
-#### dnf config-manager 명령어는 CentOS Linux 8 이상 버전에서 제공되는 DNF(Dandified Yum) 패키지 매니저에서 사용되는 명령어이며 crb 패키지가 활성화되고, 이후 dnf update 또는 dnf upgrade 명령을 실행하면 crb 패키지가 설치됩니다
+#### 기본 repository 확인
+
+```
+sudo dnf repolist
+```
+Linux에서 Repository는 프로그램을 다운로드하고 설치 할 수 있는 저장소 입니다.
+
+![image](https://github.com/user-attachments/assets/c4232c04-1c3d-4b52-8d9b-20ae314dd186)
+
+위와 같이 기본적으로는 3개의 저장소가 활성화 되어 제공 됩니다. 제공되는 3개의 저장소에서 필요한 프로그램이 설치 되지 않을 수 있어 다음과 같이 저장소를 활성화 하거나 추가 합니다.
+
+#### 모든 repository 확인
+
+```
+sudo dnf repolist all
+```
+![image](https://github.com/user-attachments/assets/03e68906-30c3-40b7-a7f1-ad2a68e3ce5d)
+
+
+#### dnf config-manager 명령어는 CentOS Linux 8 이상 버전에서 제공되는 DNF(Dandified Yum) 패키지 매니저에서 사용되는 명령어이며 crb 패키지가 활성화되고, 
+#### 이후 dnf update 또는 dnf upgrade 명령을 실행하면 crb 패키지가 설치됩니다.
 ```
 sudo dnf config-manager --set-enabled crb
 ```
@@ -94,18 +114,25 @@ sudo dnf repolist
 ```
 ![image](https://github.com/user-attachments/assets/8cf154ba-3f50-4633-97ab-fdf4ef768bed)
 
+![image](https://github.com/user-attachments/assets/3814184e-1ae3-401a-b5c8-be82fbfaca64)
+
 #### RPM 추가 epel-next-release, epel-release
-RPM(Red Hat Package Manager)은 레드햇 리눅스 계열 운영체제에서 사용되는 패키지 관리 도구입니다. RPM은 소프트웨어 패키지를 설치, 삭제, 업그레이드 및 유지보수하는데 사용됩니다.
+RPM(Red Hat Package Manager)은 레드햇 리눅스 계열 운영체제에서 사용되는 패키지 관리 도구입니다. 
+RPM은 소프트웨어 패키지를 설치, 삭제, 업그레이드 및 유지보수하는데 사용됩니다.
 ```
 sudo dnf -y install \
     https://dl.fedoraproject.org/pub/epel/epel-release-latest-9.noarch.rpm \
     https://dl.fedoraproject.org/pub/epel/epel-next-release-latest-9.noarch.rpm
 ```
+#### noarch : 아키텍처 무관, CPU가 인텔이건 AMD건 관계 없이 설치 가능하다는 의미
+
 추가된 레파지토리 확인
 ```
 sudo dnf repolist
 ```
 ![image](https://github.com/user-attachments/assets/ced4eebf-2c39-4b83-8da7-7afe94ef4d96)
+
+![image](https://github.com/user-attachments/assets/165b69a5-0568-4de1-81b4-688f479d5e47)
 
 #### dnf -y update 명령은
 - 기존에 설치된 패키지들의 최신 버전을 확인하고, 필요한 경우 최신 버전으로 업데이트합니다.
