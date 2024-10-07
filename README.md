@@ -543,19 +543,19 @@ PWD : 위에서 지정한 비밀번호
 <br>
 
 # ◼︎ DeNovoCNN 설치
-## 1.디렉토리 홈으로 이동
+## 1. 디렉토리 홈으로 이동
 ```
 cd
 ```
-## 2.git에서 소스 가져오기
+## 2. git에서 소스 가져오기
 ```
 git clone https://github.com/Genome-Bioinformatics-RadboudUMC/DeNovoCNN.git
 ```
-## 3.디렉토리 이동
+## 3. 디렉토리 이동
 ```
 cd ./DeNovoCNN
 ```
-## 4.채널 우선순위 변경
+## 4. 채널 우선순위 변경
 ```
 conda config --set channel_priority flexible
 ```
@@ -567,32 +567,114 @@ flexible 모드에서는 각 채널의 최신 버전 패키지가 자동으로 �
 •	relaxed: 공식 채널과 비공채널의 패키지를 동등하게 고려합니다.
 •	flexible: 각 채널의 최신 버전 패키지를 자동으로 선택합니다.
 
-## 5.yml파일을 이용한 콘다 가상환경 생성 및 패키지 설치
+## 5. yml파일을 이용한 콘다 가상환경 생성 및 패키지 설치
 ```
 conda env create -f environment.yml
 ```
 
 ![image](https://github.com/user-attachments/assets/9d4ad80c-d1a9-4d35-be09-89a46a095e17)
 
-## 6.가상환경으로 진입
+## 6. 가상환경으로 진입
 ```
 conda activate tensorflow_env
 ```
 
-## 7.ipykernel 설치
+## 7. ipykernel 설치
 ```
 conda install -y ipykernel
 ```
 
-## 8.주피터랩 확인
+## 8. 주피터랩 확인
 
 ![image](https://github.com/user-attachments/assets/5f3f14e2-60ce-46e0-b1e0-50f0a2071dc2)
 
+![image](https://github.com/user-attachments/assets/77680e65-9e2b-46cc-a0d7-61d2adc27371)
+
+- Collecting asttokens==2.0.5
+- Collecting backcall==0.2.0
+- Collecting decorator==5.1.1
+- Collecting executing==0.8.3
+  
+..
+
+..
+
+..
+
 
 <br>
 <br>
 <br>
 <br>
+
+# ◼︎ conda gatk 환경에 각종 툴 설치
+## install bwa, vcfstats, vcftools, bedtools, fastqc, somalier, slivar, salmon, s5cmd, plink, plink2, multiqc, minimap2, htslib, king, libxml2-devel-cos6-x86_64, gistic2 설치
+## 1. GATK 가상환경 진입
+```
+conda activate gatk
+```
+## 2. bwa 설치
+```
+micromamba install -y bioconda::bwa
+```
+## 3. biopet-vcfstats 설치
+```
+micromamba install -y bioconda::biopet-vcfstats
+```
+## 4. vcftools 설치
+```
+micromamba install -y bioconda::vcftools
+```
+## 5. Rust 설치
+
+![image](https://github.com/user-attachments/assets/cc83dce7-692f-4624-a42d-7880b2274aa1)
+
+```
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+```
+[Install Rust 공식 홈페이지](https://www.rust-lang.org/tools/install)
+
+## 6. JAVA 실행 환경 변경
+
+java 버전 확인
+```
+java -version
+```
+![image](https://github.com/user-attachments/assets/599972b4-c9f6-4de6-b7b5-6d54e3feb08b)
+
+설치된 자바 삭제
+```
+sudo rm /opt/miniconda3/envs/gatk/bin/java
+```
+시스템에 설치된 자바로 연결
+```
+sudo ln -s /usr/bin/java /opt/miniconda3/envs/gatk/bin/java
+```
+![image](https://github.com/user-attachments/assets/e37bb0b5-deb0-49d1-92fe-f681b9c467db)
+
+java 버전 변경
+```
+sudo alternatives --config java
+```
+![image](https://github.com/user-attachments/assets/085d8640-8550-4d1b-a634-4f4d97c98588)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 # ◼︎ Galaxy 설치
