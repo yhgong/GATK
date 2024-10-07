@@ -64,7 +64,7 @@
 
 <br>
 
-# ◼︎주피터랩 설치 및 conda GATK3 연동
+# ◼︎ 주피터랩 설치 및 conda GATK3 연동
 
 ## 1. System Update
 패키지 업그레이드를 강제로 실행하면서 기존 의존성 문제를 무시하고 최신 버전으로 업데이트하는 옵션입니다.
@@ -289,7 +289,7 @@ conda install -y ipykernel
 
 <br>
 
-# ◼︎Triodenovo 설치
+# ◼︎ Triodenovo 설치
 
 ## 1. 설치 위치
 ```
@@ -387,7 +387,7 @@ source ~/.bachrc
 
 <br>
 
-# ◼︎AdmixTools 설치
+# ◼︎ AdmixTools 설치
 
 ## 1.설치 위치
 ```
@@ -458,7 +458,7 @@ echo 'export PATH=$PATH:/home/rocky/AdmixTools-7.0.2/bin' >> ~/.bashrc
 
 <br>
 
-# ◼︎R 설치
+# ◼︎ R 설치
 
 ## 1.가상환경 생성
 ```
@@ -541,7 +541,7 @@ PWD : 위에서 지정한 비밀번호
 <br>
 
 
-# ◼︎Galaxy 설치
+# ◼︎ Galaxy 설치
 ## 1.SSH 서버 접속 및 위치 확인
 
 ![image](https://github.com/user-attachments/assets/18b2480a-b6b6-4818-8716-4ec4260f6cea)
