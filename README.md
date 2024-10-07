@@ -562,8 +562,13 @@ sudo dnf install -y R
 ```
 wget https://download2.rstudio.org/server/rhel9/x86_64/rstudio-server-rhel-2024.09.0-375-x86_64.rpm
 ```
+RStudio 설치
 ```
 sudo yum install rstudio-server-rhel-2024.09.0-375-x86_64.rpm
+```
+RStudio 설치파일 삭제
+```
+rm -f rstudio-server-rhel-2024.09.0-375-x86_64.rpm
 ```
 
 ## 5. SELinux 설정 및 rocky 비밀번호 생성
