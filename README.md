@@ -658,7 +658,12 @@ sudo alternatives --config java
 ```
 ![image](https://github.com/user-attachments/assets/085d8640-8550-4d1b-a634-4f4d97c98588)
 
+## 7. bedtools 설치
 
+java 버전 확인
+```
+java -version
+```
 
 
 
